@@ -36,4 +36,4 @@ kubectl port-forward svc/datahub-frontend 9001:9001
 helm uninstall datahub --namespace datahub
 helm uninstall prerequisites --namespace datahub
 
-kubectl delete all --all --namespace datahub
+kubectl delete all --all  --grace-period=30 --namespace datahub
