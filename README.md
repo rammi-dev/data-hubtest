@@ -24,11 +24,11 @@ EOL
 kubectl create secret generic mysql-secrets --from-literal=mysql-root-password=datahub
 kubectl create secret generic neo4j-secrets --from-literal=neo4j-password=datahub
 
-helm install prerequisites datahub/datahub-prerequisites --namespace datahub
+helm install prerequisites datahub/datahub-prerequisites -f values-prerequisites.yaml --namespace datahub
 
 kubectl wait --for=condition=ready pod --all --namespace datahub --timeout=1m
 
-helm install datahub datahub/datahub -f values.yaml --namespace datahub
+helm install datahub datahub/datahub -f values-datahub.yaml --namespace datahub
 
 # Port-forward DataHub frontend
 kubectl port-forward svc/datahub-frontend 9001:9001
