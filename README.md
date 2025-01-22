@@ -31,8 +31,8 @@ kubectl wait --for=condition=ready pod --all --namespace datahub --timeout=1m
 helm install datahub datahub/datahub -f values-datahub.yaml --namespace datahub
 
 # Port-forward DataHub frontend
-kubectl port-forward svc/datahub-frontend 9001:9001
-
+ kubectl port-forward svc/datahub-datahub-frontend 10002:9002
+ 
 helm uninstall datahub --namespace datahub
 helm uninstall prerequisites --namespace datahub
 

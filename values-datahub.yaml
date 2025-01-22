@@ -52,9 +52,7 @@ datahub-frontend:
   # Set up ingress to expose react front-end
   ingress:
     enabled: false
-  defaultUserCredentials: 
-    username: "admin" 
-    password: "admin" 
+  defaultUserCredentials: {}
   service:
     extraLabels: {}
     # randomAdminPassword: true
@@ -65,6 +63,15 @@ datahub-frontend:
   # Optionaly specify service type for datahub-frontend: LoadBalancer, ClusterIP or NodePort, by default: LoadBalancer
   # service:
   #   type: ClusterIP
+  extraVolumes:
+    - name: datahub-users
+      secret:
+        defaultMode: 0444
+        secretName:  datahub-users-secret
+  extraVolumeMounts:
+    - name: datahub-users
+      mountPath: /datahub-frontend/conf/user.props
+      subPath: user.props
 
 acryl-datahub-actions:
   enabled: true
