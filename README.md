@@ -1,7 +1,7 @@
 # Create a Kind cluster
 kind create cluster --config data-hub-kind-cluster.yaml
 
-```kubectl create namespace datahub```
+<pre><code>kubectl create namespace datahub</code></pre>
 
 # Add the DataHub Helm chart repository
 ```helm repo add datahub https://datahub-project.github.io/charts/``` 
