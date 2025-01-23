@@ -1,5 +1,5 @@
 # Create a Kind cluster
-`kind create cluster --config kind-config.yaml`
+kind create cluster --config data-hub-kind-cluster.yaml
 
 `kubectl create namespace datahub`
 
