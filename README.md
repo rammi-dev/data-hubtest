@@ -34,4 +34,3 @@ kind create cluster --config data-hub-kind-cluster.yaml
 
 # If you want to update 
 <pre><code>helm upgrade datahub datahub/datahub --values <path_to_values.yaml></pre></code>
-
